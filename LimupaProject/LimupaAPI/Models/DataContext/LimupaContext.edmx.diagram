@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="faaa7084c51a43d4bb3013d9d7baf14f" Name="Diagram1">
+        <EntityTypeShape EntityType="didongLimupaModel.Admin" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="didongLimupaModel.Attribute" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="didongLimupaModel.Banner" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="didongLimupaModel.Brand" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="didongLimupaModel.Category" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="didongLimupaModel.Color" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="didongLimupaModel.Contact" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="didongLimupaModel.Customer" Width="1.5" PointX="3.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="didongLimupaModel.News" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="didongLimupaModel.Order" Width="1.5" PointX="6" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="didongLimupaModel.Order_detail" Width="1.5" PointX="8.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="didongLimupaModel.productColor" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="didongLimupaModel.ProductRam" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="didongLimupaModel.Product" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="didongLimupaModel.Ram" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <AssociationConnector Association="didongLimupaModel.FK__Attribute__pro_i__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="didongLimupaModel.FK__Products__brand___20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="didongLimupaModel.FK__Products__catego__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="didongLimupaModel.FK__productCo__color__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="didongLimupaModel.FK__Order__cus_id__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="didongLimupaModel.FK__Order_det__order__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="didongLimupaModel.FK__Order_det__pro_i__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="didongLimupaModel.FK__productCo__pro_i__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="didongLimupaModel.FK__ProductRa__pro_i__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="didongLimupaModel.FK__ProductRa__ram_i__30F848ED" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

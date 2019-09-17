@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LimupaProject", "LimupaProject\LimupaProject.csproj", "{E60CAD28-4BD5-4B29-8B68-8EF24F75DB08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LimupaAPI", "LimupaAPI\LimupaAPI.csproj", "{43E46D1A-DBA7-40A5-B307-4D3A9FADCF29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E60CAD28-4BD5-4B29-8B68-8EF24F75DB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E60CAD28-4BD5-4B29-8B68-8EF24F75DB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E60CAD28-4BD5-4B29-8B68-8EF24F75DB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E60CAD28-4BD5-4B29-8B68-8EF24F75DB08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43E46D1A-DBA7-40A5-B307-4D3A9FADCF29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43E46D1A-DBA7-40A5-B307-4D3A9FADCF29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43E46D1A-DBA7-40A5-B307-4D3A9FADCF29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43E46D1A-DBA7-40A5-B307-4D3A9FADCF29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53F8A35A-85DB-4201-A442-E7245F45D71B}
+	EndGlobalSection
+EndGlobal

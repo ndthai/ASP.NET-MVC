@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="didongLimupaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="admin_id" />
+    </Key>
+    <Property Name="admin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="admin_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="gender" Type="Boolean" />
+    <Property Name="created" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Attribute">
+    <Key>
+      <PropertyRef Name="attribute_id" />
+    </Key>
+    <Property Name="attribute_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="screen" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="operating_system" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="camera_after" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="camera_before" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cpu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="battery_capacity" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pro_id" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Attribute__pro_i__239E4DCF" FromRole="Attributes" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Banner">
+    <Key>
+      <PropertyRef Name="banner_id" />
+    </Key>
+    <Property Name="banner_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="banner_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="link" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="brand_id" />
+    </Key>
+    <Property Name="brand_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="logo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="status" Type="Boolean" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Products__brand___20C1E124" FromRole="Brands" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="cate_id" />
+    </Key>
+    <Property Name="cate_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="status" Type="Boolean" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Products__catego__1FCDBCEB" FromRole="Categories" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="color_id" />
+    </Key>
+    <Property Name="color_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="color_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="status" Type="Boolean" />
+    <NavigationProperty Name="productColors" Relationship="Self.FK__productCo__color__2A4B4B5E" FromRole="Colors" ToRole="productColor" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="contact_id" />
+    </Key>
+    <Property Name="contact_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="contact_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="created" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="cus_id" />
+    </Key>
+    <Property Name="cus_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cus_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="gender" Type="Boolean" Nullable="false" />
+    <Property Name="created" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Order__cus_id__35BCFE0A" FromRole="Customers" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="news_id" />
+    </Key>
+    <Property Name="news_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="images" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="image_detail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="createby" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="createdate" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="price" Type="Double" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="order_date" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="cus_id" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__Order__cus_id__35BCFE0A" FromRole="Order" ToRole="Customers" />
+    <NavigationProperty Name="Order_detail" Relationship="Self.FK__Order_det__order__38996AB5" FromRole="Order" ToRole="Order_detail" />
+  </EntityType>
+  <EntityType Name="Order_detail">
+    <Key>
+      <PropertyRef Name="orderDetail_id" />
+    </Key>
+    <Property Name="orderDetail_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <Property Name="total_price" Type="Double" Nullable="false" />
+    <Property Name="sale_price" Type="Double" Nullable="false" />
+    <Property Name="order_id" Type="Int32" />
+    <Property Name="pro_id" Type="Int32" />
+    <NavigationProperty Name="Order" Relationship="Self.FK__Order_det__order__38996AB5" FromRole="Order_detail" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Order_det__pro_i__398D8EEE" FromRole="Order_detail" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="productColor">
+    <Key>
+      <PropertyRef Name="productColor_id" />
+    </Key>
+    <Property Name="productColor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pro_id" Type="Int32" />
+    <Property Name="color_id" Type="Int32" />
+    <NavigationProperty Name="Color" Relationship="Self.FK__productCo__color__2A4B4B5E" FromRole="productColor" ToRole="Colors" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__productCo__pro_i__29572725" FromRole="productColor" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="ProductRam">
+    <Key>
+      <PropertyRef Name="productRam_id" />
+    </Key>
+    <Property Name="productRam_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ram_price" Type="Double" Nullable="false" />
+    <Property Name="ram_sale_price" Type="Double" Nullable="false" />
+    <Property Name="pro_id" Type="Int32" />
+    <Property Name="ram_id" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__ProductRa__pro_i__300424B4" FromRole="ProductRam" ToRole="Products" />
+    <NavigationProperty Name="Ram" Relationship="Self.FK__ProductRa__ram_i__30F848ED" FromRole="ProductRam" ToRole="Rams" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="pro_id" />
+    </Key>
+    <Property Name="pro_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nameProduct" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="price" Type="Double" Nullable="false" />
+    <Property Name="sale_price" Type="Double" Nullable="false" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="brand_id" Type="Int32" />
+    <NavigationProperty Name="Attributes" Relationship="Self.FK__Attribute__pro_i__239E4DCF" FromRole="Products" ToRole="Attributes" />
+    <NavigationProperty Name="Brand" Relationship="Self.FK__Products__brand___20C1E124" FromRole="Products" ToRole="Brands" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__Products__catego__1FCDBCEB" FromRole="Products" ToRole="Categories" />
+    <NavigationProperty Name="Order_detail" Relationship="Self.FK__Order_det__pro_i__398D8EEE" FromRole="Products" ToRole="Order_detail" />
+    <NavigationProperty Name="productColors" Relationship="Self.FK__productCo__pro_i__29572725" FromRole="Products" ToRole="productColor" />
+    <NavigationProperty Name="ProductRams" Relationship="Self.FK__ProductRa__pro_i__300424B4" FromRole="Products" ToRole="ProductRam" />
+  </EntityType>
+  <EntityType Name="Ram">
+    <Key>
+      <PropertyRef Name="ram_id" />
+    </Key>
+    <Property Name="ram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ram_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="status" Type="Boolean" />
+    <NavigationProperty Name="ProductRams" Relationship="Self.FK__ProductRa__ram_i__30F848ED" FromRole="Rams" ToRole="ProductRam" />
+  </EntityType>
+  <Association Name="FK__Attribute__pro_i__239E4DCF">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Attributes" Type="Self.Attribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="pro_id" />
+      </Principal>
+      <Dependent Role="Attributes">
+        <PropertyRef Name="pro_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products__brand___20C1E124">
+    <End Role="Brands" Type="Self.Brand" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brands">
+        <PropertyRef Name="brand_id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="brand_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products__catego__1FCDBCEB">
+    <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="cate_id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__productCo__color__2A4B4B5E">
+    <End Role="Colors" Type="Self.Color" Multiplicity="0..1" />
+    <End Role="productColor" Type="Self.productColor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Colors">
+        <PropertyRef Name="color_id" />
+      </Principal>
+      <Dependent Role="productColor">
+        <PropertyRef Name="color_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order__cus_id__35BCFE0A">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="cus_id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="cus_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order_det__order__38996AB5">
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="Order_detail" Type="Self.Order_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="order_id" />
+      </Principal>
+      <Dependent Role="Order_detail">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order_det__pro_i__398D8EEE">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Order_detail" Type="Self.Order_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="pro_id" />
+      </Principal>
+      <Dependent Role="Order_detail">
+        <PropertyRef Name="pro_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__productCo__pro_i__29572725">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="productColor" Type="Self.productColor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="pro_id" />
+      </Principal>
+      <Dependent Role="productColor">
+        <PropertyRef Name="pro_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductRa__pro_i__300424B4">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="ProductRam" Type="Self.ProductRam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="pro_id" />
+      </Principal>
+      <Dependent Role="ProductRam">
+        <PropertyRef Name="pro_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductRa__ram_i__30F848ED">
+    <End Role="Rams" Type="Self.Ram" Multiplicity="0..1" />
+    <End Role="ProductRam" Type="Self.ProductRam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rams">
+        <PropertyRef Name="ram_id" />
+      </Principal>
+      <Dependent Role="ProductRam">
+        <PropertyRef Name="ram_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="didongLimupaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Attributes" EntityType="Self.Attribute" />
+    <EntitySet Name="Banners" EntityType="Self.Banner" />
+    <EntitySet Name="Brands" EntityType="Self.Brand" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Colors" EntityType="Self.Color" />
+    <EntitySet Name="Contacts" EntityType="Self.Contact" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="News" EntityType="Self.News" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Order_detail" EntityType="Self.Order_detail" />
+    <EntitySet Name="productColors" EntityType="Self.productColor" />
+    <EntitySet Name="ProductRams" EntityType="Self.ProductRam" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Rams" EntityType="Self.Ram" />
+    <AssociationSet Name="FK__Attribute__pro_i__239E4DCF" Association="Self.FK__Attribute__pro_i__239E4DCF">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Attributes" EntitySet="Attributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products__brand___20C1E124" Association="Self.FK__Products__brand___20C1E124">
+      <End Role="Brands" EntitySet="Brands" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products__catego__1FCDBCEB" Association="Self.FK__Products__catego__1FCDBCEB">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__productCo__color__2A4B4B5E" Association="Self.FK__productCo__color__2A4B4B5E">
+      <End Role="Colors" EntitySet="Colors" />
+      <End Role="productColor" EntitySet="productColors" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order__cus_id__35BCFE0A" Association="Self.FK__Order__cus_id__35BCFE0A">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order_det__order__38996AB5" Association="Self.FK__Order_det__order__38996AB5">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Order_detail" EntitySet="Order_detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order_det__pro_i__398D8EEE" Association="Self.FK__Order_det__pro_i__398D8EEE">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Order_detail" EntitySet="Order_detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__productCo__pro_i__29572725" Association="Self.FK__productCo__pro_i__29572725">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="productColor" EntitySet="productColors" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductRa__pro_i__300424B4" Association="Self.FK__ProductRa__pro_i__300424B4">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ProductRam" EntitySet="ProductRams" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductRa__ram_i__30F848ED" Association="Self.FK__ProductRa__ram_i__30F848ED">
+      <End Role="Rams" EntitySet="Rams" />
+      <End Role="ProductRam" EntitySet="ProductRams" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

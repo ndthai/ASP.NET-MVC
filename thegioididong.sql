@@ -65,7 +65,7 @@ create table Products (
 	[status] bit default(1), --0: Ẩn, 1: Hiện;
 
 	category_id int foreign key references Categories(cate_id),
-	brand_id int foreign key references Brands(brand_id)
+	brand_id int foreign key references Brands(brand_id),
 )
 go
 
@@ -81,7 +81,6 @@ create table Attributes (
 	cpu nvarchar(200) not null,
 	battery_capacity nvarchar(200) not null,
 	size nvarchar(50) not null,
-
 	pro_id int foreign key references Products(pro_id)
 )
 go
@@ -95,7 +94,7 @@ create table Colors (
 go
 
 --9 bảng màu sản phẩm
-create table productColor (
+create table ProductColor (
 	productColor_id int identity primary key,
 	[image] nvarchar(200) not null,
 
